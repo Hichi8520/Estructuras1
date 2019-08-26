@@ -9,9 +9,21 @@
         <input v-model.number="num2" type="number">
         <p></p>
 
-        <span>Operar   </span>
-        <input type="button" @click="operar" />
-        <p>Suma: {{suma}}</p>
+        <span>Sumar   </span>
+        <input type="button" @click="sumar" />
+        <p>Resultado: {{suma}}</p>
+
+        <span>Restar   </span>
+        <input type="button" @click="restar" />
+        <p>Resultado: {{resta}}</p>
+
+        <span>Multiplicar   </span>
+        <input type="button" @click="multiplicar" />
+        <p>Resultado: {{multi}}</p>
+
+        <span>Dividir   </span>
+        <input type="button" @click="dividir" />
+        <p>Resultado: {{divi}}</p>
 
     </div>
 </template>
@@ -24,12 +36,31 @@
         @Prop() private msg!: string;
 
         suma: number = 0
+        resta: number = 0
+        multi: number = 0
+        divi: number = 0
+
         num1: number = 0
         num2: number = 0
 
-        operar() {
+        sumar() {
             this.suma = 0
-            this.suma += this.num1 + this.num2
+            this.suma = this.num1 + this.num2
+        }
+
+        restar() {
+            this.resta = 0
+            this.resta = this.num1 - this.num2
+        }
+
+        multiplicar() {
+            this.multi = 0
+            this.multi = this.num1 * this.num2
+        }
+
+        dividir() {
+            this.divi = 0
+            this.divi = this.num1 / this.num2
         }
     }
 </script>
